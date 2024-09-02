@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<p>Flux</p>
+<ul>
+    {% for review in reviews %}
+    <li> {{review.title}}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

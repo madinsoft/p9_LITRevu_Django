@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+    <p>{{ message }}</p>
+    <form method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <button type="submit" >Se connecter</button>
+    </form>
+    <p>Inscrivez-vous maintenant !<a href="{% url 'signup' %}">S'inscrire</a></p>
+{% endblock content %} 
+<!--<html>
+    <head><title>LITRevu</title></head>
+    
+    <body>
+        <header>
+            <h1>LITReview</h1>
+            
+        </header>
+        
+    
+        <main>
+            <p>{{ message }}</p>
+            <form method="post">
+                {{ form.as_p }}
+                {% csrf_token %}
+                <button type="submit" >Se connecter</button>
+            </form>
+        </main>
+    </body>
+</html>-->

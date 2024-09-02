@@ -1,0 +1,37 @@
+{% load static %}
+<html>
+    <head>
+        <title>LITRevu</title>
+        <link rel="stylesheet" href="{% static 'css/app.css' %}"/>
+    </head>
+    
+    <body>
+        <header>
+            <div>
+                <h1>LITReview</h1>
+                {% if user.is_authenticated %}
+                    <p>Vous êtes connecté en tant que {{ request.user }}.</p>
+                    <nav>
+                        <ul>
+                            <li><a href="{% url 'home' %}">Flux</a></li>
+                            <li><a href="{% url 'your_posts' %}">Vos posts</a></li>
+                            <li><a href="{% url 'subscriptions' %}">Abonnements</a></li>
+                            <li><a href="{% url 'logout' %}">Se déconnecter</a></li>
+                        </ul>
+                    </nav>
+                {% endif %}
+            </div>
+            
+        </header>
+        
+    
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+        {% if user.is_authenticated %}
+            <p>Vous êtes connecté en tant que {{ request.user }}. <a href="{% url 'logout' %}">Se déconnecter</a></p>
+        {% endif %}
+    
+    </body>
+</html>
