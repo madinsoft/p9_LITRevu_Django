@@ -4,28 +4,6 @@ from django.db import models
 
 
 # Create your models here.
-"""class User(models.Model):
-    class LiteraryTaste(models.TextChoices):
-        CLASSIQUE = 'classique'
-        POLICIER = 'policier'
-        HISTORIQUE = 'historique'
-        #se servir du projet 2 pour la liste
-        # changer pour faire un choix multiple (max 3)
-    pseudo = models.fields.CharField(max_length=15)
-    password = models.fields.CharField(max_length=15)
-    # pour le moment juste des caractères après accepter caractères spéciaux et chiffres voir cours 2
-    literary_taste = models.fields.CharField(choices=LiteraryTaste.choices, max_length=10)
-    # Rajouter un champs pour dire si l'utilisateur est actif (+ de 3 posts par exemple)
-    def __str__(self):
-        return f'{self.pseudo}'"""
-
-
-"""class Photo(models.Model):
-    image = models.ImageField()
-    caption = models.CharField(max_length=128, blank=True)
-    uploader = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default="toto")
-    date_created = models.DateTimeField(auto_now_add=True)"""
-
 class Review(models.Model):
     """Critique avec comme champs : title, comment"""
     title = models.fields.CharField(max_length=100)
